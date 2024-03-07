@@ -17,10 +17,10 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: false,
+  enable: true,
   svg: true,
-  width: 216,
-  height: 46,
+  width: 32,
+  height: 32,
 };
 
 export const SOCIALS: SocialObjects = [
