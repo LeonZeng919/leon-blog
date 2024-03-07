@@ -34,7 +34,7 @@ User getUser(@Param("id")Integer id, @Param("name")String name);
 
 mybatis在解析参数名称的时候，就可以拿到参数名称。下面是Mybatis源码（`见org.apache.ibatis.reflection.ParamNameResolver#ParamNameResolver`）。
 ![org.apache.ibatis.reflection.ParamNameResolver#ParamNameResolver](../../assets/images/param-reason/param-reason-2.png)
-这里要注意是使用Mybatis包下的org.apache.ibatis.annotations.Param注解，而不是Spring JPA下的org.springframework.data.repository.query.Param注解，**这就是为什么你明明用了@Param注解，却还是会报错。**
+这里要注意是使用Mybatis包下的org.apache.ibatis.annotations.Param注解，而不是Spring JPA下的`org.springframework.data.repository.query.Param`注解，**这就是为什么你明明用了@Param注解，却还是会报错。**
 
 ## 2.2 保留编译后参数名称
 
