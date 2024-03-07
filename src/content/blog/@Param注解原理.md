@@ -1,7 +1,7 @@
 ---
 title: Mybatis的@Param注解原理
 author: Leon Zeng
-pubDatetime: 2023-06-06T14:06:31Z
+pubDatetime: 2023-02-05T14:06:31Z
 slug: Mybatis的@Param注解原理
 featured: false
 draft: false
@@ -32,7 +32,7 @@ mybatis的使用过程中，经常出现如下报错：
 User getUser(@Param("id")Integer id, @Param("name")String name);
 ```
 
-mybatis在解析参数名称的时候，就可以拿到参数名称。下面是Mybatis源码（见org.apache.ibatis.reflection.ParamNameResolver#ParamNameResolver）。
+mybatis在解析参数名称的时候，就可以拿到参数名称。下面是Mybatis源码（`见org.apache.ibatis.reflection.ParamNameResolver#ParamNameResolver`）。
 ![org.apache.ibatis.reflection.ParamNameResolver#ParamNameResolver](../../assets/images/param-reason/param-reason-2.png)
 这里要注意是使用Mybatis包下的org.apache.ibatis.annotations.Param注解，而不是Spring JPA下的org.springframework.data.repository.query.Param注解，**这就是为什么你明明用了@Param注解，却还是会报错。**
 
@@ -77,7 +77,7 @@ mybatis在解析参数名称的时候，就可以拿到参数名称。下面是M
 
 注意，第一个参数，可以是arg0或param1，第二个参数，名称可以是arg1或param2，以此类推。
 
-下面是Mybatis源码（见org.apache.ibatis.reflection.ParamNameResolver#getNamedParams）。
+下面是Mybatis源码（`见org.apache.ibatis.reflection.ParamNameResolver#getNamedParams`）。
 ![org.apache.ibatis.reflection.ParamNameResolver#getNamedParams](../../assets/images/param-reason/param-reason-4.png)
 
 ## 2.4 单个参数，名称随意
@@ -89,7 +89,7 @@ mybatis在解析参数名称的时候，就可以拿到参数名称。下面是M
 - 参数类型是List，可用的参数名称 --> [arg0, param1, collection, list]
 - 参数类型是数组，可用的参数名称 --> [arg0, param1, array]
 
-下面是Mybatis源码（见org.apache.ibatis.reflection.ParamNameResolver#wrapToMapIfCollection）。![org.apache.ibatis.reflection.ParamNameResolver#wrapToMapIfCollection](../../assets/images/param-reason/param-reason-5.png)
+下面是Mybatis源码（`见org.apache.ibatis.reflection.ParamNameResolver#wrapToMapIfCollection`）。![org.apache.ibatis.reflection.ParamNameResolver#wrapToMapIfCollection](../../assets/images/param-reason/param-reason-5.png)
 
 这也是为啥你不用@Param注解指定参数名称，也没有问题。
 
