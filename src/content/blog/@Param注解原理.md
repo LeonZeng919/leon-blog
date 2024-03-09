@@ -3,6 +3,7 @@ title: Mybatis的@Param注解原理
 author: Leon Zeng
 pubDatetime: 2023-02-05T14:06:31Z
 slug: Mybatis的@Param注解原理
+coverImage: "/src/assets/images/glpEhXqcuy.jpg"
 featured: false
 draft: false
 tags:
