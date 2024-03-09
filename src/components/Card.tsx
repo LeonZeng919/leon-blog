@@ -21,22 +21,28 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
     <li className="my-6">
       <a
         href={href}
-        className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+        className="inline-block text-lg decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
       >
         {coverImage && (
           <img
             src={coverImage}
-            className=" h-[200px] w-[800px] rounded-t-xl object-cover"
+            className=" h-[200px] w-[800px] rounded-t-2xl object-cover"
           />
         )}
-        {secHeading ? (
-          <h2 {...headerProps}>{title}</h2>
-        ) : (
-          <h3 {...headerProps}>{title}</h3>
-        )}
+        <div className=" rounded-b-2xl border-2 border-x  border-b border-t-0 border-gray-500 p-2">
+          {secHeading ? (
+            <h2 {...headerProps} className="font-medium text-skin-accent  ">
+              {title}
+            </h2>
+          ) : (
+            <h3 {...headerProps} className="font-medium text-skin-accent   ">
+              {title}
+            </h3>
+          )}
+          <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+          <p>{description}</p>
+        </div>
       </a>
-      <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
-      <p>{description}</p>
     </li>
   );
 }
