@@ -8,7 +8,7 @@ featured: false
 draft: false
 tags:
   - Java
-description: Mybatis的使用过程中，经常出现org.apache.ibatis.binding.BindingException报错，大部分文章告诉你在Mapper接口的方法参数上使用@Param注解，可是有的时候不用也没有问题，还有的时候用了@Param注解也还是报错，今天我们探究下这个注解原理，以后你碰到这个问题就不再懵逼了。
+description: Mybatis的使用过程中，经常出现BindingException报错，大部分文章告诉你在Mapper接口的方法参数上使用@Param注解，可是有的时候不用也没有问题，还有的时候用了@Param注解也还是报错，今天我们探究下这个注解原理，以后你碰到这个问题就不再懵逼了。
 ---
 
 mybatis的使用过程中，经常出现如下报错：
