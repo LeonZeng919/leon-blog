@@ -19,12 +19,12 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      remarkToc,
+      [remarkToc, { heading: '目录' }],
       remarkReadingTime,
       [
         remarkCollapse,
         {
-          test: "Table of contents",
+          test: "目录",
         },
       ],
     ],
