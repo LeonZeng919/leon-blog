@@ -29,7 +29,12 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
             className=" h-[200px] w-[800px] rounded-t-2xl object-cover"
           />
         )}
-        <div className=" rounded-b-2xl border-2 border-x  border-b border-t-0 border-gray-500 p-2">
+        <div
+          className={
+            coverImage &&
+            "rounded-b-2xl border-2 border-x  border-b border-t-0 border-gray-500 p-2"
+          }
+        >
           {secHeading ? (
             <h2 {...headerProps} className="font-medium text-skin-accent  ">
               {title}

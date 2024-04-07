@@ -3,7 +3,7 @@ title: js文件配置和直接用json文件配置，有啥优劣
 author: Leon Zeng
 pubDatetime: 2024-03-27 19:06:11
 slug: js文件配置和直接用json文件配置优劣对比
-coverImage: "/assets/coverImage/glpEhXqcuy.jpg"
+coverImage: ""
 featured: false
 draft: false
 tags:
